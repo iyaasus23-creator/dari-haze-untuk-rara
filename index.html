@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Untuk Kamu, yang Pernah Aku Cinta</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;700&family=Nerko+One&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://feeldreams.github.io/dibacadong/style.css">
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="https://unpkg.com/typeit@8.7.0/dist/index.umd.js"></script>
+<script src="https://kit.fontawesome.com/4f3ce16e3e.js" crossorigin="anonymous"></script>
+
+<style>
+body {font-family:'Nunito Sans',sans-serif;}
+#pergeseran p {cursor:pointer;}
+#bq {display:none;}
+</style>
+</head>
+
+<body>
+
+<audio id="linkmp3" src="https://raw.github.com/iyaasus23-creator/dari-haze-untuk-rara/laguku.mp3"preload="auto"></audio>
+
+<div id="bodyblur">
+  <img src="https://feeldreams.github.io/papjalan3.jpeg" id="wallpaper">
+</div>
+
+<div id="Content" style="opacity:1;margin-top:14vh">
+
+  <div id="ftAwal">
+    <img src="https://feeldreams.github.io/ngumpet.gif" id="ftoAwal">
+  </div>
+
+  <!-- LOVE -->
+  <div id="loveIn">
+    <label class="lovein">&#10084;</label>
+  </div>
+  <p id="ket">Sentuh LOVEnya 🤍</p>
+
+  <!-- STIKER -->
+  <div class="kumpulanstiker">
+    <img src="https://feeldreams.github.io/pusn.gif" id="fotostiker">
+  </div>
+
+  <!-- GESER -->
+  <div id="pergeseran">
+    <p><b>hai kamu…</b></p>
+    <p><b>aku nulis ini</b></p>
+    <p><b>bukan buat nyakitin</b></p>
+    <p><b>tapi buat jujur</b></p>
+    <p><b>klik sekali lagi 🤍</b></p>
+  </div>
+
+  <p id="ketgeser">Klik teksnya satu-satu</p>
+
+  <!-- PESAN AKHIR -->
+  <blockquote id="bq">
+    <p id="kalimat">
+      kita pernah saling memilih,<br><br>
+      tapi ternyata cinta saja<br>
+      tidak selalu cukup untuk bertahan.<br><br>
+      aku mencintaimu dengan caraku,<br>
+      dan melepaskanmu juga dengan caraku.<br><br>
+      tanpa marah,<br>
+      tanpa dendam,<br>
+      hanya dengan doa.
+    </p>
+    <p id="pesanAkhir">
+      terima kasih sudah pernah tinggal di hatiku 🤍
+    </p>
+  </blockquote>
+
+</div>
+
+<script>
+const audio = document.getElementById("linkmp3");
+const love = document.querySelector(".lovein");
+const pergeseran = document.getElementById("pergeseran");
+const teks = pergeseran.querySelectorAll("p");
+const bq = document.getElementById("bq");
+const kalimat = document.getElementById("kalimat");
+
+let step = 0;
+let geserIndex = 0;
+
+// sembunyikan teks geser dulu
+teks.forEach((p,i)=>{ if(i>0) p.style.display="none"; });
+
+// LOVE pertama
+love.onclick = () => {
+  audio.play();
+}
+
+// klik geser
+pergeseran.onclick = () => {
+  geserIndex++;
+  if (geserIndex < teks.length) {
+    teks[geserIndex].style.display = "block";
+  } else {
+    // selesai geser → tampil pesan akhir
+    pergeseran.style.display = "none";
+    document.getElementById("ketgeser").style.display = "none";
+    bq.style.display = "block";
+
+    new TypeIt("#kalimat", {
+      speed: 40,
+      waitUntilVisible: true
+    }).go();
+  }
+};
+
+love.addEventListener("dblclick", () => {
+  Swal.fire({
+    html: `
+      <div style="
+        font-family:'Nunito Sans',sans-serif;
+        text-align:center;
+        padding:10px 5px;
+      ">
+        <div style="
+          font-size:22px;
+          font-weight:700;
+          color:#d3b7c2;
+          margin-bottom:10px;
+        ">
+          I love you 🤍
+        </div>
+
+        <div style="
+          width:40px;
+          height:2px;
+          background:#d3b7c2;
+          margin:0 auto 14px;
+          border-radius:2px;
+        "></div>
+
+        <div style="
+          font-size:14px;
+          line-height:1.8;
+          color:#555;
+          text-align:justify;
+        ">
+          Hallo rara. Hehe. Aku hepi btt bisa bertemn dengan mu.
+          Canda bareng lewat cht, call²an. Haha. Seru sii hari² kita waktu tu.
+          Makasih dah nemenin ya. The best sii be friend with you.
+          <br><br>
+          aku mo ngomong sesuatu. Tapi janji ya Jan nangis
+          (mastiin aj, klo ndk, ndkpapa jg kok) hehe.
+          Mybe ini last interaction kita lewat cht.
+          Tpi klo di kampus tetap lah kek teman ya.
+          <br><br>
+          Bukn aku bosen berteman dengan mu, atau ada temn baru.
+          "I just want this feeling to fade away".
+          Klo di tahan jg tak enak, klo serius,
+          aku dh tau jg jawabnnya. "Makin sakit ntr".
+          <br><br>
+          Intinya aku ga mo berlarut-larut....
+          Aku tetap dengn prinsip ku klo bertemn
+          "They are there for me, I am there for them".
+          <br><br>
+          Klo ad pun sekadr temn di kampus.
+          Ga bkl chat²an se dramatis dengn vibes romance korea kek kita.
+          Klo kmu cari teman lgi cari aja,
+          cari yg better dri ku ya.
+          <br><br>
+          Ya bisa me motivasiin mu,
+          ksih semangat belajar,
+          yg punya bnyk waktu.
+          <br><br>
+          Ntr klo rasa ku dh hilang,
+          mu jg, bertemn lgi aja kita.
+          <br><br>
+          Eh iya aku jg ga bakal lupa plan kita liat Aurora tu,
+          trus jalan-jalan ke bnyk Negera.
+          Ntr aku nya lupa ingatin ya,
+          lgi ngumpulin fulus, hehe.
+          <br><br>
+          Keliatan alay ya ni cht?, ini lah aku.
+          Klo ga suka lupain aja.
+          Aku cmn nyampeiin.
+          Jan di sebarin ni malu aku nya.
+          <br><br>
+          Hehe makasih Rara 🤍
+        </div>
+      </div>
+    `,
+    confirmButtonText: "🤍",
+    confirmButtonColor: "#d3b7c2",
+    width: "360px",
+    background: "#fafafa"
+  });
+});
+
+</script>
+
+
+</body>
+</html>
